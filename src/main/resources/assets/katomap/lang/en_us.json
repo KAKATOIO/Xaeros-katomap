@@ -1,0 +1,11 @@
+{
+  "key.katomap.open": "Open 3D map",
+  "key.category.katomap.main": "Xaero's Katomap",
+  "katomap.title": "Xaero's Katomap 3D",
+  "katomap.help1": "Left drag: rotate | Right/Middle drag: pan | Scroll: zoom | WASD: move | Q/E: rotate",
+  "katomap.help2": "R: recenter | PgUp/PgDn: height x%s | 1/2/3: quality | Esc: close",
+  "katomap.nodata": "No terrain data yet. Explore a bit and reopen the map.",
+  "katomap.coords": "X %s  Y %s  Z %s",
+  "katomap.east": "E",
+  "katomap.west": "W"
+}

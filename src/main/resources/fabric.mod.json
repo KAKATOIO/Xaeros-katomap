@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "xaerokaka",
+  "id": "katomap",
   "version": "${version}",
-  "name": "Xaero kaka",
-  "description": "Maquete 3D do mapa: gire, incline, mova e dê zoom no terreno explorado. Addon para Xaero's World Map / Minimap.",
-  "authors": ["kaka"],
+  "name": "Xaero's Katomap",
+  "description": "Maquete 3D do terreno explorado: gire, incline, mova e dê zoom. Addon independente para uso ao lado do Xaero's World Map / Minimap.",
+  "authors": ["Katomap"],
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
-    "client": ["com.kaka.xaerokaka.XaeroKakaClient"]
+    "client": ["com.katomap.KatomapClient"]
   },
   "depends": {
-    "fabricloader": ">=0.13.0",
+    "fabricloader": ">=0.18.0",
     "fabric-api": "*",
     "minecraft": ">=26.3 <26.4",
     "java": ">=25"

@@ -1,23 +1,47 @@
-name: Build mod
+name: Build
+
 on:
   push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: write   # necessário para publicar o Release quando houver uma tag v*
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 25
+
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: current
-      - run: gradle build --no-daemon
+
+      - name: Build
+        run: gradle build --no-daemon --stacktrace
+
+      - name: Separar o jar final (sem o -sources)
+        run: |
+          mkdir -p dist
+          cp $(ls build/libs/*.jar | grep -v -- '-sources') dist/
+          ls -la dist
+
       - uses: actions/upload-artifact@v4
         with:
-          name: xaero-kaka-jar
-          path: |
-            build/libs/*.jar
-            !build/libs/*-sources.jar
+          name: xaeros-katomap-jar
+          path: dist/*.jar
+
+      - name: Publicar Release (somente em tags v*)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.jar
+          generate_release_notes: true

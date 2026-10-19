@@ -5,4 +5,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'xaero-kaka'
+rootProject.name = 'xaeros-katomap'
