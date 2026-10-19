@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "xaerokaka",
+  "version": "${version}",
+  "name": "Xaero kaka",
+  "description": "Maquete 3D do mapa: gire, incline, mova e dê zoom no terreno explorado. Addon para Xaero's World Map / Minimap.",
+  "authors": ["kaka"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.kaka.xaerokaka.XaeroKakaClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.13.0",
+    "fabric-api": "*",
+    "minecraft": ">=26.3 <26.4",
+    "java": ">=25"
+  },
+  "suggests": {
+    "xaeroworldmap": "*",
+    "xaerominimap": "*"
+  }
+}
